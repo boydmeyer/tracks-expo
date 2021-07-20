@@ -2,8 +2,6 @@
  * React Native
  */
 import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 /**
@@ -39,6 +37,7 @@ const trackListFlow = createStackNavigator({
     TrackList: TrackListScreen,
     TrackDetail: TrackDetailScreen,
 });
+
 trackListFlow.navigationOptions = {
     title: "My tracks",
     tabBarIcon: <MaterialIcons name="map" size={24} color="#282828" />,

@@ -1,6 +1,6 @@
 import React, { useContext, useCallback } from "react";
-import { StyleSheet } from "react-native";
-import { Text, View } from "react-native-elements";
+import { StyleSheet, View } from "react-native";
+import { Text, Input } from "react-native-elements";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { withNavigationFocus } from "react-navigation";
 import useLocation from "../hooks/useLocation";
@@ -29,20 +29,15 @@ const TrackCreateScreen = ({ isFocused }) => {
     const [error] = useLocation(isFocused || recording, callback);
 
     return (
-        <>
+        <View style={styles.container}>
             <Map />
-            <Spacer>
-                <Text style={styles.title} h3>
-                    Create a track
-                </Text>
-            </Spacer>
             {error ? (
                 <Text style={styles.errorMessage}>
                     Please enable location services
                 </Text>
             ) : null}
             <TrackForm />
-        </>
+        </View>
     );
 };
 
@@ -54,11 +49,9 @@ TrackCreateScreen.navigationOptions = {
 export default withNavigationFocus(TrackCreateScreen);
 
 const styles = StyleSheet.create({
+    container: { flex: 1, backgroundColor: "#FFFFFF" },
     errorMessage: {
         fontSize: 16,
         color: "red",
-    },
-    title: {
-        color: "#282828",
     },
 });

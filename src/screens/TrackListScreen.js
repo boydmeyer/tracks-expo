@@ -44,7 +44,9 @@ const TrackListScreen = ({ navigation }) => {
         </>
     );
 };
-
+TrackListScreen.navigationOptions = {
+    title: "My tracks",
+};
 export default TrackListScreen;
 
 const styles = StyleSheet.create({});

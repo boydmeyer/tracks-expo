@@ -5,7 +5,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
  * trackerApi
  */
 const instance = axios.create({
-    baseURL: "http://47d78ad6c0f5.ngrok.io",
+    baseURL: "https://still-spire-71902.herokuapp.com",
 });
 
 /**

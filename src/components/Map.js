@@ -25,7 +25,14 @@ const Map = () => {
             }}
             style={styles.map}
         >
-            <Polyline coordinates={locations.map((loc) => loc.coords)} />
+            <Polyline
+                strokeWidth={6}
+                lineCap="round"
+                lineJoin="round"
+                geodesic={true}
+                strokeColor={"rgba(31,117,234,0.8)"}
+                coordinates={locations.map((loc) => loc.coords)}
+            />
         </MapView>
     );
 };
