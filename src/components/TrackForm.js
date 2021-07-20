@@ -22,6 +22,11 @@ const TrackForm = () => {
                 </Text>
             </Spacer>
             <Input label="Title" onChangeText={changeTitle} value={title} />
+            <Input
+                label="Description"
+                // onChangeText={changeDescription}
+                // value={description}
+            />
             <Spacer>
                 {recording ? (
                     <Button
@@ -47,12 +52,12 @@ export default TrackForm;
 const styles = StyleSheet.create({
     container: {
         borderRadius: 10,
-        padding: 20,
-        margin: 10,
-        elevation: 20,
-        backgroundColor: "white",
+        padding: 10,
+        // elevation: 20,
+        // backgroundColor: "white",
     },
     title: {
+        fontWeight: "bold",
         color: "#282828",
         marginBottom: 16,
     },

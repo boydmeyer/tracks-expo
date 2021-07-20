@@ -3,14 +3,14 @@ import { StyleSheet, View } from "react-native";
 import { Text, Button, Input } from "react-native-elements";
 import Spacer from "./Spacer";
 
-const AuthForm = ({ title, errorMessage, onSubmit, submitButtonText }) => {
+const SignInForm = ({ errorMessage, onSubmit }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     return (
-        <View>
+        <View style={styles.container}>
             <Spacer>
                 <Text style={styles.title} h3>
-                    {title}
+                    Sign in
                 </Text>
             </Spacer>
             <Input
@@ -32,14 +32,14 @@ const AuthForm = ({ title, errorMessage, onSubmit, submitButtonText }) => {
             <Spacer>
                 <Button
                     onPress={() => onSubmit({ email, password })}
-                    title={submitButtonText}
+                    title="Sign in"
                 />
             </Spacer>
         </View>
     );
 };
 
-export default AuthForm;
+export default SignInForm;
 
 const styles = StyleSheet.create({
     title: { marginBottom: 20 },

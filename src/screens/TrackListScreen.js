@@ -15,7 +15,7 @@ import { Text } from "react-native-elements";
 const TrackListScreen = ({ navigation }) => {
     const { fetchTracks, state } = useContext(TrackContext);
     return (
-        <>
+        <View style={styles.container}>
             <NavigationEvents onWillFocus={fetchTracks} />
             <FlatList
                 data={state}
@@ -41,7 +41,7 @@ const TrackListScreen = ({ navigation }) => {
                     );
                 }}
             />
-        </>
+        </View>
     );
 };
 TrackListScreen.navigationOptions = {
@@ -49,4 +49,6 @@ TrackListScreen.navigationOptions = {
 };
 export default TrackListScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: { flex: 1, backgroundColor: "#F8F8FC" },
+});
